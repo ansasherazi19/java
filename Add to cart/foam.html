@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="foam.css">
+    <title>siglog</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title-text">
+          <div class="title login">Login Form</div>
+          <div class="title signup">Signup Form</div>
+        </div>
+        <div class="form-container">
+          <div class="slide-controls">
+            <input type="radio" name="slide" id="login" checked>
+            <input type="radio" name="slide" id="signup">
+            <label for="login" class="slide login">Login</label>
+            <label for="signup" class="slide signup">Signup</label>
+            <div class="slider-tab"></div>
+          </div>
+          <div class="form-inner">
+            <form action="#" class="login" onsubmit="return loginValidation()">
+              <div class="field">
+                <input type="text" id="login-email" placeholder="Email" required>
+              </div>
+              <div class="field">
+                <input type="password" id="login-password" placeholder="Password" required>
+              </div>
+              <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Login">
+              </div>
+              <div class="signup-link">Not a member? <a href="">Signup now</a></div>
+            </form>
+
+            <form action="#" class="signup" >
+                <div class="field">
+                  <input type="text" id="name" placeholder="User Name" required oninput="validateName()">
+                </div>
+                <div class="field">
+                  <input type="email" id="signup-email" placeholder="Email" required oninput="validateEmail()">
+                </div>
+                <div class="field">
+                  <input type="password" id="password" placeholder="Password" required oninput="validatePassword()">
+                </div>
+                <div class="field btn">
+                  <div class="btn-layer"></div>
+                  <input type="submit" value="Signup" class="submit"  onclick="Register()">
+                </div>
+              </form>
+
+          </div>
+        </div>
+      </div>
+  
+    <script src="java.js"></script>
+    
+</body>
+</html>
