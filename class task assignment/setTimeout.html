@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Display</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+
+        .btn {
+            margin-bottom: 30px;
+        }
+
+        img {
+            width: 300px;
+            height: 300px;
+            display: block;
+            margin: 0 60px;
+
+        }
+
+     
+        button {
+            padding: 12px 24px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin: 10px;
+            background-color: #277d80;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #3aaaad;
+            transform: translateY(-3px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+       
+        #messages {
+    
+           
+            font-size: 1.3em;
+            color: #333;
+            line-height: 1.6;
+            font-weight: 500;
+            padding: 20px;
+            background-color: #FFFAF0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+            min-height: 80px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btn">
+        <img src="st,small,507x507-pad,600x600,f8f8f8.u4.jpg" alt="">
+        <button id="start-btn">Start Messages</button>
+        <button id="stop-btn">Stop Messages</button>
+    </div>
+    <div id="messages">Chhoti si muskurahat se shuru karo, aur phir dekho magic! 😁✨ "Start Messages" pe click karo aur
+        apne din ki shuruaat karo! 🌞</div>
+
+
+    <script>
+        let messages = [
+            "Zindagi mein sabse zaroori cheez🤏... apni favorite chai ka cup☕ aur ek achi kitab📚",
+            "Har din ek nayi kahani likhne ka mauka hota hai... toh shuru karo apni best kahani! 📖✨",
+            "Aaj ka goal: Smile karna aur kisi ko bhi thoda sa khushi dena! 😊💫",
+            "Zindagi mein jo bhi milta hai, uska shukriya ada karo... khas kar agar woh pizza ho! 🍕❤️",
+            "Agar aap ek superhero hote, toh aapka superpower kya hota? Mera toh coffee ka unlimited supply hona! ☕💪",
+            "Jab life thodi boring lagti hai, ek achi movie laga lo, ya phir ek nayi playlist sun lo! 🎬🎶",
+            "Aapki positivity ki wajah se duniya thodi aur achi lagti hai! 🌍🌈",
+            "Ek acha din shuru hota hai... ek acchi breakfast aur ek smile ke saath! 🍳🥞😊",
+            "Zindagi ka maza usi mein hai, jab aap apni favorite music sun rahe ho aur chill kar rahe ho! 🎧🎶",
+            "Jab tak hum saath hain, har din ek adventure ho sakta hai! 🌟🌍"
+        ];
+       
+        // Start Messages 
+        document.querySelector("#start-btn").addEventListener('click', function () {
+            let i = 0;
+            function displayNextMessage() {
+                if (i < messages.length) {
+                    document.getElementById('messages').innerText = messages[i];
+                    i++;
+
+
+                      timeout = setTimeout(displayNextMessage, 3000);
+                }
+            }
+
+
+            displayNextMessage();
+        });
+
+        // Stop Messages 
+        document.querySelector("#stop-btn").addEventListener('click', function () {
+            clearTimeout(timeout);
+            console.log("Messages stopped");
+        });
+    </script>
+
+</body>
+
+</html>
